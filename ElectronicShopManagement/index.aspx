@@ -1,4 +1,27 @@
 ﻿<!DOCTYPE html>
+<script runat="server">
+
+    Protected Sub btnLogout_Click(sender As Object, e As EventArgs)
+        Response.Redirect("logout.aspx")
+    End Sub
+
+    Protected Sub btnCart_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Protected Sub btnLogin_Click1(sender As Object, e As EventArgs)
+        Response.Redirect("login.aspx")
+    End Sub
+
+    Protected Sub bbtnRegister_Click(sender As Object, e As EventArgs)
+        Response.Redirect("register.aspx")
+    End Sub
+
+    Protected Sub btnHome_Click1(sender As Object, e As EventArgs)
+        Response.Redirect("index.aspx")
+    End Sub
+</script>
+
 <html lang="en">
 
 <head>
@@ -23,6 +46,8 @@
 
 <body>
 
+    <form id="form1" runat="server">
+
    <!-- header section starts     -->
 
    <section class="header">
@@ -30,10 +55,14 @@
       <img src="images\logo.png" class="logo">
 
       <nav class="navbar">
-         <a href="index.aspx">home</a>
-         <a href="Product.aspx">shop</a>
-         <a href="login.aspx">Login</a>;
-         <a href="logout.php">Log out</a>
+
+          <asp:LinkButton ID="btnHome" runat="server" OnClick="btnHome_Click1">Home</asp:LinkButton>
+          <asp:LinkButton ID="btnCart" runat="server" OnClick="btnCart_Click">Cart</asp:LinkButton>
+          <asp:LinkButton ID="btnUsername" runat="server">Username</asp:LinkButton>
+          <asp:LinkButton ID="btnLogin" runat="server" OnClick="btnLogin_Click1">Login</asp:LinkButton>
+          <asp:LinkButton ID="bbtnRegister" runat="server" OnClick="bbtnRegister_Click">Register</asp:LinkButton>
+          <asp:LinkButton ID="btnLogout" runat="server">Log Out</asp:LinkButton>
+
       </nav>
 
       <div id="menu-btn" class="fas fa-bars"></div>
@@ -98,10 +127,8 @@
                         <div class="info">
                            <h3>Bajaj Fan</h3>
                            <br>
-                           <form method="post">
                               <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" required>
                               <input class="btn" type="submit" name="addtocart" value="Add To Cart">
-                           </form>
                            <br>
                         </div>
                         <div class="img"><img src="images/bajajfan.jpeg" style="float: right; width: 200px; height: 200px;" >
@@ -113,10 +140,8 @@
                         <div class="info">
                            <h3>Usha Fan</h3>
                            <br>
-                           <form method="post">
                               <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" required>
                               <input class="btn" type="submit" name="addtocart" value="Add To Cart">
-                           </form>
                            <br>
                         </div>
                         <div class="img"><img src="images/ushafan.jpeg" style="float: right; width: 200px; height: 200px;" >
@@ -147,10 +172,8 @@
                         <div class="info">
                            <h3>Panasonic Air Conditioner</h3>
                            <br>
-                           <form method="post">
                               <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" required>
                               <input class="btn" type="submit" name="addtocart" value="Add To Cart">
-                           </form>
                            <br>
                         </div>
                         <div class="img"><img src="images/panasonicac.jpeg" style="float: right; width: 200px; height: 200px;" >
@@ -162,10 +185,8 @@
                         <div class="info">
                            <h3>Voltas Air Conditioner 1.5 ton</h3>
                            <br>
-                           <form method="post">
                               <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" required>
                               <input class="btn" type="submit" name="addtocart" value="Add To Cart">
-                           </form>
                            <br>
                         </div>
                         <div class="img"><img src="images/voltasac.jpeg" style="float: right; width: 200px; height: 100px;" >
@@ -230,5 +251,6 @@
    <script>
       lightGallery(document.querySelector('.gallery .gallery-container'));
    </script>
+    </form>
 </body>
 </html>

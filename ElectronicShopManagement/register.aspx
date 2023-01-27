@@ -30,6 +30,7 @@
     <!--/Style-CSS -->
 
     <!--//Style-CSS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
 </head>

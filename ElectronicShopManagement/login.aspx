@@ -1,7 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="ElectronicShopManagement.login" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="UTF-8"/>
@@ -33,19 +32,22 @@
     <!--/Style-CSS -->
 
     <!--//Style-CSS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <form id="form2" runat="server">
     <section class="header">
 
       <img src="images\logo.png" class="logo"/>
 
       <nav class="navbar">
-         <a href="index.aspx">home</a>
-         <a href="Product.aspx">shop</a>
-         <a href="login.aspx">Login</a>;
-         <a href="logout.php">Log out</a>
+         <asp:LinkButton ID="btnHome" runat="server" OnClick="btnHome_Click">Home</asp:LinkButton>
+          <asp:LinkButton ID="btnCart" runat="server" OnClick="btnShop_Click">Cart</asp:LinkButton>
+          <asp:LinkButton ID="btnLogin" runat="server" OnClick="btnLogin_Click">Login</asp:LinkButton>
+          <asp:LinkButton ID="btnRegister" runat="server" OnClick="btnRegister_Click1">Register</asp:LinkButton>
+          <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click">Log out</asp:LinkButton>
       </nav>
 
       <div id="menu-btn" class="fas fa-bars"></div>
@@ -66,13 +68,11 @@
                         <h2>Login Now</h2>
                         <p>Welcome to our store where you can get everything fresh with fresh vibes!</p>
                         <br />
-                        <form id="form1" runat="server">
-                            <asp:TextBox ID="TextBox1" runat="server" class="email" CssClass="inputBox" placeholder="Enter your Email" style="margin-top: 5px;" Width="300px"></asp:TextBox>
-                            <asp:TextBox ID="TextBox2" runat="server" class="passowrd" CssClass="inputBox" placeholder="Enter your Password" TextMode="Password" Width="300px" ></asp:TextBox>
+                            <asp:TextBox ID="txtEmail" runat="server" class="email" CssClass="inputBox" placeholder="Enter your Email" style="margin-top: 5px;" Width="300px"></asp:TextBox>
+                            <asp:TextBox ID="txtPassword" runat="server" class="passowrd" CssClass="inputBox" placeholder="Enter your Password" TextMode="Password" Width="300px" ></asp:TextBox>
                             <p><a href="forgetpassword.php" style="margin-bottom: 15px; display: block; text-align: right;">Forgot Password?</a></p>
                             <asp:Button ID="Button1" runat="server" CssClass="btn" Text="Login" BackColor="#0043A2" Font-Bold="True" Font-Size="Large" Font-Strikeout="False" ForeColor="White" OnClick="Button1_Click" />
-                        </form>
-                        <div class="social-icons">
+                            <div class="social-icons">
                             <p>Create Account! <a href="register.aspx">Register</a>.</p>
                         </div>
                     </div>
@@ -92,5 +92,6 @@
             });
         });
     </script>
+        </form>
 </body>
 </html>

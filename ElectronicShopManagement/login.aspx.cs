@@ -21,15 +21,45 @@ namespace ElectronicShopManagement
         protected void Button1_Click(object sender, EventArgs e)
         {
             con.Open();
-            string query = "select * from tblUser";
+            string query = "select * from tblUser where email='"+txtEmail.Text+"' and password='"+txtPassword.Text+"'";
             com = new SqlCommand(query, con);
             SqlDataReader dr = com.ExecuteReader();
-
             if(dr.Read() == true)
             {
+                string uname = dr.GetString(1);
+                Session["username"] = uname;
                 Response.Redirect("index.aspx");
             }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "k", "swal('Error!', 'Invalid Credentials!', 'error');", true);
+            }
             con.Close();
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        protected void btnShop_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("cart.aspx");
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("login.aspx");
+        }
+
+        protected void btnRegister_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("register.aspx");
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("logout.aspx");
         }
     }
 }
