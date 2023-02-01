@@ -35,15 +35,18 @@
     <script src="https://kit.fontawesome.com/af562a2a63.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <form id="form1" runat="server">
     <section class="header">
 
       <img src="images\logo.png" class="logo"/>
 
       <nav class="navbar">
-         <a href="index.aspx">home</a>
-         <a href="Product.aspx">shop</a>
-         <a href="login.aspx">Login</a>;
-         <a href="logout.php">Log out</a>
+          <asp:LinkButton ID="btnHome" runat="server" OnClick="btnHome_Click">Home</asp:LinkButton>
+          <asp:LinkButton ID="btnCart" runat="server" OnClick="btnCart_Click">Cart</asp:LinkButton>
+          <asp:LinkButton ID="btnUname" runat="server" OnClick="btnUname_Click">Username</asp:LinkButton>
+          <asp:LinkButton ID="btnLogin" runat="server" OnClick="btnLogin_Click">Login</asp:LinkButton>
+          <asp:LinkButton ID="btnReg" runat="server" OnClick="LinkButton1_Click">Register</asp:LinkButton>
+          <asp:LinkButton ID="btnLogout" runat="server">Log out</asp:LinkButton>
       </nav>
 
       <div id="menu-btn" class="fas fa-bars"></div>
@@ -64,7 +67,7 @@
                         <h2>Register Now</h2>
                         <p>Join Us In This Journey By Being A Part Of It! </p>
 
-                        <form id="form1" runat="server">
+                        
                             <asp:TextBox ID="txtUsername" runat="server" CssClass="inputBox" placeholder="Enter Your Username" Width="300px"></asp:TextBox>
                             <asp:TextBox ID="txtEmail" runat="server" CssClass="inputBox" placeholder="Enter Your Email" Width="300px"></asp:TextBox>
                             <asp:TextBox ID="txtPassword" runat="server" CssClass="inputBox" placeholder="Enter Your Password" Width="300px" TextMode="Password"></asp:TextBox>

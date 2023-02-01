@@ -15,7 +15,16 @@ namespace ElectronicShopManagement
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+            if(Session["username"] is true)
+            {
+                string uname = Session["username"].ToString();
+                btnLogin.Text = uname;
+            }
+            else
+            {
+                btnLogin.Text = "Login";
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -42,11 +51,6 @@ namespace ElectronicShopManagement
             Response.Redirect("index.aspx");
         }
 
-        protected void btnShop_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("cart.aspx");
-        }
-
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             Response.Redirect("login.aspx");
@@ -60,6 +64,11 @@ namespace ElectronicShopManagement
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             Response.Redirect("logout.aspx");
+        }
+
+        protected void btnShop_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("cart.aspx");
         }
     }
 }

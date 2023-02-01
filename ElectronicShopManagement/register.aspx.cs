@@ -58,5 +58,35 @@ namespace ElectronicShopManagement
             }
 
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        protected void btnCart_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("cart.aspx");
+        }
+
+        protected void btnUname_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("login.aspx");
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("register.aspx");
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("logout.aspx");
+        }
     }
 }

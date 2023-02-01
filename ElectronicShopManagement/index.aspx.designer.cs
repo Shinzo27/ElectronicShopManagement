@@ -7,16 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+
 namespace ElectronicShopManagement
 {
-    /// <summary>
-    /// Defines the <see cref="WebForm1" />.
-    /// </summary>
     public partial class WebForm1
     {
-        /// <summary>
-        /// form1 control..
-        /// </summary>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
     }
 }
