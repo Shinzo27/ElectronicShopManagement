@@ -11,6 +11,61 @@ namespace ElectronicShopManagement
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["loggedin"] == null)
+            {
+                btnLogout.Visible = false;
+                btnUname.Visible = false;
+            }
+            else
+            {
+                btnLogout.Visible = true;
+                btnUname.Visible = true;
+                btnLogin.Visible = false;
+                btnRegister.Visible = false;
+                btnUname.Text = Session["username"].ToString();
+            }
+        }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("index.aspx");
+        }
+
+        protected void btnCart_Click(object sender, EventArgs e)
+        {
+            if (Session["loggedin"] == null)
+            {
+                Response.Redirect("login.aspx");
+            }
+            else
+            {
+                Response.Redirect("cart.aspx");
+            }
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("login.aspx");
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("register.aspx");
+        }
+
+        protected void btnUname_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("username.aspx");
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session["loggedin"] = null;
+            Session.Remove("username");
+            btnLogout.Visible = false;
+            btnUname.Visible = false;
+            btnLogin.Visible = true;
+            btnRegister.Visible = true;
 
         }
     }

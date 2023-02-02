@@ -44,7 +44,7 @@
    </section>
 
     <section class="menu" id="fan">
-
+      <br />
       <div class="heading">
          <span>list</span>
          <h3>Our products</h3>
@@ -91,10 +91,6 @@
 
     <section class="menu" id="ac">
 
-      <div class="heading">
-         <span>list</span>
-         <h3>Our products</h3>
-      </div>
       <div class="swiper menu-slider">
          <div class="swiper-wrapper">
             <div class="swiper-slide slide">
@@ -142,11 +138,24 @@
                         </div>
                         <div class="price">₹4500</div>
                    </div>
+
+                   <div class="box">
+                        <div class="info">
+                           <h3>Voltas Ac</h3>
+                           <br>
+                              <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" required>
+                              <input class="btn" type="submit" name="addtocart" value="Add To Cart">
+                           <br>
+                        </div>
+                        <div class="img"><img src="images/voltasac.jpeg" style="float: right; width: 200px; height: 100px;">
+                        </div>
+                        <div class="price">₹4500</div>
+                   <%--</div>--%>
                </div>
         </div>
         </div>
         </div>
-
+        </div>
    </section>
 
    <!-- home section ends -->

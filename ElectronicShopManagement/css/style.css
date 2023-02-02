@@ -49,7 +49,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 section {
-  padding: 0rem 0%;
+  margin : auto;
 }
 
 .heading {

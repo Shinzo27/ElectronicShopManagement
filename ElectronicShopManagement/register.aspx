@@ -66,8 +66,6 @@
                     <div class="content-wthree">
                         <h2>Register Now</h2>
                         <p>Join Us In This Journey By Being A Part Of It! </p>
-
-                        
                             <asp:TextBox ID="txtUsername" runat="server" CssClass="inputBox" placeholder="Enter Your Username" Width="300px"></asp:TextBox>
                             <asp:TextBox ID="txtEmail" runat="server" CssClass="inputBox" placeholder="Enter Your Email" Width="300px"></asp:TextBox>
                             <asp:TextBox ID="txtPassword" runat="server" CssClass="inputBox" placeholder="Enter Your Password" Width="300px" TextMode="Password"></asp:TextBox>
