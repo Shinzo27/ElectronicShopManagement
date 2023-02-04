@@ -72,35 +72,17 @@
     <Content Include="admin\Css\bootstrap.min.css" />
     <Content Include="admin\Css\dataTables.bootstrap5.min.css" />
     <Content Include="admin\Css\style.css" />
-    <Content Include="admin\Images\634b9b9cae7c6.jpg" />
-    <Content Include="admin\Images\634b9c7e7df3f.jpg" />
-    <Content Include="admin\Images\634bfaafcff44.png" />
-    <Content Include="admin\Images\634bfb2d34e20.png" />
-    <Content Include="admin\Images\634bfca223757.png" />
-    <Content Include="admin\Images\634bfccd8dd8e.jpg" />
-    <Content Include="admin\Images\634bfcf499c39.jpg" />
-    <Content Include="admin\Images\634d5d32ee159.jpg" />
-    <Content Include="admin\Images\634d5dd63af70.png" />
-    <Content Include="admin\Images\634d5e217876f.png" />
-    <Content Include="admin\Images\634d5e40bcfd8.png" />
-    <Content Include="admin\Images\634d5e5d173d8.png" />
-    <Content Include="admin\Images\634d5e98b464a.jpg" />
-    <Content Include="admin\Images\634d5ebced25a.jpg" />
-    <Content Include="admin\Images\634d5ed95125e.jpg" />
-    <Content Include="admin\Images\634d5f0152769.jpg" />
-    <Content Include="admin\Images\634d5f32644df.jpg" />
-    <Content Include="admin\Images\634d5f7aa926f.png" />
-    <Content Include="admin\Images\634d606e05ca2.jpg" />
-    <Content Include="admin\Images\634d6088644f6.jpg" />
-    <Content Include="admin\Images\634d60a80597e.jpg" />
-    <Content Include="admin\Images\634d60cae0eef.jpg" />
-    <Content Include="admin\Images\634d60e432209.jpg" />
-    <Content Include="admin\Images\634d62f6db4f1.jpg" />
-    <Content Include="admin\Images\634d63165dc50.jpg" />
-    <Content Include="admin\Images\634d632e1b421.jpg" />
+    <Content Include="admin\Images\bajajfan.jpeg" />
     <Content Include="admin\Images\icon.ico" />
+    <Content Include="admin\Images\images.jpeg" />
     <Content Include="admin\Images\logo.png" />
+    <Content Include="admin\Images\orient.jpeg" />
+    <Content Include="admin\Images\panasonicac.jpeg" />
+    <Content Include="admin\Images\panasonicfan.jpeg" />
+    <Content Include="admin\Images\panasonicfridge.jpeg" />
+    <Content Include="admin\Images\panasoniclight.jpg" />
     <Content Include="admin\Images\undraw_experience_design_re_ca7l.svg" />
+    <Content Include="admin\Images\ushafan.jpeg" />
     <Content Include="admin\Js\bootstrap.bundle.min.js" />
     <Content Include="admin\Js\dataTables.bootstrap5.min.js" />
     <Content Include="admin\Js\jquery-3.5.1.js" />
@@ -124,9 +106,9 @@
     <Content Include="images\voltasac.jpeg" />
     <Content Include="js\script.js" />
     <Content Include="Web.config" />
-    <Content Include="register.aspx" />
     <Content Include="index.aspx" />
     <Content Include="login.aspx" />
+    <Content Include="register.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin\addproduct.aspx.cs">
@@ -151,13 +133,6 @@
       <DependentUpon>product.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="register.aspx.cs">
-      <DependentUpon>register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="register.aspx.designer.cs">
-      <DependentUpon>register.aspx</DependentUpon>
-    </Compile>
     <Compile Include="header.Master.cs">
       <DependentUpon>header.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -178,6 +153,13 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -61,7 +61,6 @@ namespace ElectronicShopManagement
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             Session["loggedin"] = null;
-            Session.Remove("username");
             btnLogout.Visible = false;
             btnUname.Visible = false;
             btnLogin.Visible = true;

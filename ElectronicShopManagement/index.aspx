@@ -1,6 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/header.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="ElectronicShopManagement.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            height: 15px;
+        }
+    </style>
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -56,32 +65,40 @@
                <br>
                <div class="box-container">
                   <div class="box">
-                        <div class="info">
-                           <h3>Usha Fans</h3>
-                           <br>
-                              <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" required>
-                              <input class="btn" type="submit" name="addtocart" value="Add To Cart">
-                           <br>
-                        </div>
-                        <div class="img"><img src="images/ushafan.jpeg" style="float: right; width: 100px; height: 100px;">
-                        </div>
-                        <div class="price">₹2500</div>
+                        
+                      <asp:DataList ID="DataList1" runat="server" CellPadding="1" DataSourceID="SqlDataSource1" RepeatColumns="4" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False" Width="1541px">
+                          <ItemTemplate>
+                              <table class="auto-style1">
+                                  <tr>
+                                      <td>
+                                          <asp:Label ID="Label1" runat="server" Font-Size="X-Large" Text='<%# Eval("pname") %>'></asp:Label>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <asp:Label ID="Label4" runat="server" Font-Size="X-Large" Text="₹"></asp:Label>
+                                          <asp:Label ID="Label3" runat="server" Font-Size="X-Large" Text='<%# Eval("price") %>'></asp:Label>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <asp:ImageButton ID="ImageButton1" runat="server" Height="100px" ImageUrl='<%# Eval("pimage") %>' Width="100px" />
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <asp:TextBox ID="txtQuantity" runat="server" CssClass="auto-style5" Font-Size="Large" Height="38px" placeholder="Quantity" Width="176px" Wrap="False"></asp:TextBox>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <asp:Button ID="btnAdd" runat="server" BackColor="#FF9900" CssClass="btn" ForeColor="White" Text="Add To Cart" />
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                  </tr>
+                              </table>
+                              <br />
+                              <br />
+                          </ItemTemplate>
+                      </asp:DataList>
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:dbElectronicConnectionString %>" SelectCommand="SELECT * FROM [tblProduct] WHERE ([category] = @category)">
+                          <SelectParameters>
+                              <asp:Parameter DefaultValue="fans" Name="category" Type="String" />
+                          </SelectParameters>
+                      </asp:SqlDataSource>
+                        
                    </div>
 
-
-
-                  <div class="box">
-                        <div class="info">
-                           <h3>Bajaj Fans</h3>
-                           <br>
-                              <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" required>
-                              <input class="btn" type="submit" name="addtocart" value="Add To Cart">
-                           <br>
-                        </div>
-                        <div class="img"><img src="images/bajajfan.jpeg" style="float: right; width: 100px; height: 100px;">
-                        </div>
-                        <div class="price">₹4500</div>
-                   </div>
                </div>
             </div>
          </div>
@@ -98,67 +115,125 @@
                <br>
                <div class="box-container">
                   <div class="box">
-                        <div class="info">
-                           <h3>Panasonic Ac</h3>
-                           <br>
-                              <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" required>
-                              <input class="btn" type="submit" name="addtocart" value="Add To Cart">
-                           <br>
-                        </div>
-                        <div class="img"><img src="images/panasonicac.jpeg" style="float: right; width: 200px; height: 100px;">
-                        </div>
-                        <div class="price">₹40000</div>
-                   </div>
-               
-
-
-                  <div class="box">
-                        <div class="info">
-                           <h3>Voltas Ac</h3>
-                           <br>
-                              <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" required>
-                              <input class="btn" type="submit" name="addtocart" value="Add To Cart">
-                           <br>
-                        </div>
-                        <div class="img"><img src="images/voltasac.jpeg" style="float: right; width: 200px; height: 100px;">
-                        </div>
-                        <div class="price">₹4500</div>
-                   </div>
-
-
-                  <div class="box">
-                        <div class="info">
-                           <h3>Voltas Ac</h3>
-                           <br>
-                              <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" required>
-                              <input class="btn" type="submit" name="addtocart" value="Add To Cart">
-                           <br>
-                        </div>
-                        <div class="img"><img src="images/voltasac.jpeg" style="float: right; width: 200px; height: 100px;">
-                        </div>
-                        <div class="price">₹4500</div>
-                   </div>
-
-                   <div class="box">
-                        <div class="info">
-                           <h3>Voltas Ac</h3>
-                           <br>
-                              <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" required>
-                              <input class="btn" type="submit" name="addtocart" value="Add To Cart">
-                           <br>
-                        </div>
-                        <div class="img"><img src="images/voltasac.jpeg" style="float: right; width: 200px; height: 100px;">
-                        </div>
-                        <div class="price">₹4500</div>
-                   <%--</div>--%>
-               </div>
+                        <asp:DataList ID="DataList2" runat="server" CellPadding="1" DataSourceID="SqlDataSource2" RepeatColumns="4" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False" Width="1541px">
+                          <ItemTemplate>
+                              <table class="auto-style1">
+                                  <tr>
+                                      <td class="auto-style2">
+                                          <asp:Label ID="Label1" runat="server" Font-Size="X-Large" Text='<%# Eval("pname") %>'></asp:Label>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <asp:Label ID="Label4" runat="server" Font-Size="X-Large" Text="₹"></asp:Label>
+                                          <asp:Label ID="Label3" runat="server" Font-Size="X-Large" Text='<%# Eval("price") %>'></asp:Label>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <asp:ImageButton ID="ImageButton1" runat="server" Height="100px" ImageUrl='<%# Eval("pimage") %>' Width="100px" />
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <asp:TextBox ID="txtQuantity" runat="server" CssClass="auto-style5" Font-Size="Large" Height="38px" placeholder="Quantity" Width="176px" Wrap="False"></asp:TextBox>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnAdd" runat="server" BackColor="#FF9900" CssClass="btn" ForeColor="White" Text="Add To Cart" />
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                  </tr>
+                              </table>
+                              <br />
+                          </ItemTemplate>
+                      </asp:DataList>
+                      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:dbElectronicConnectionString %>" SelectCommand="SELECT * FROM [tblProduct] WHERE ([category] = @category)">
+                          <SelectParameters>
+                              <asp:Parameter DefaultValue="ac" Name="category" Type="String" />
+                          </SelectParameters>
+                      </asp:SqlDataSource>
+                  </div>
         </div>
         </div>
         </div>
         </div>
    </section>
 
-   <!-- home section ends -->
+   <section class="menu" id="light">
 
+      <div class="swiper menu-slider">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide slide">
+               <h3 class="title">Lights</h3>
+               <br>
+               <div class="box-container">
+                  <div class="box">
+                        <asp:DataList ID="DataList3" runat="server" CellPadding="1" DataSourceID="SqlDataSource3" RepeatColumns="4" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False" Width="1541px">
+                          <ItemTemplate>
+                              <table class="auto-style1">
+                                  <tr>
+                                      <td>
+                                          <asp:Label ID="Label1" runat="server" Font-Size="X-Large" Text='<%# Eval("pname") %>'></asp:Label>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label4" runat="server" Font-Size="X-Large" Text="₹"></asp:Label>
+                                          <asp:Label ID="Label3" runat="server" Font-Size="X-Large" Text='<%# Eval("price") %>'></asp:Label>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                          <asp:ImageButton ID="ImageButton1" runat="server" Height="100px" ImageUrl='<%# Eval("pimage") %>' Width="100px" />
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <asp:TextBox ID="txtQuantity" runat="server" CssClass="auto-style5" Font-Size="Large" Height="38px" placeholder="Quantity" Width="176px" Wrap="False"></asp:TextBox>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnAdd" runat="server" BackColor="#FF9900" CssClass="btn" ForeColor="White" Text="Add To Cart" />
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                  </tr>
+                              </table>
+                              <br />
+                          </ItemTemplate>
+                      </asp:DataList>
+                      <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:dbElectronicConnectionString %>" SelectCommand="SELECT * FROM [tblProduct] WHERE ([category] = @category)">
+                          <SelectParameters>
+                              <asp:Parameter DefaultValue="light" Name="category" Type="String" />
+                          </SelectParameters>
+                      </asp:SqlDataSource>
+                  </div>
+        </div>
+        </div>
+        </div>
+        </div>
+   </section>
+   <!-- home section ends -->
+   <section class="menu" id="refrigerator">
+
+      <div class="swiper menu-slider">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide slide">
+               <h3 class="title">Refrigerator</h3>
+               <br>
+               <div class="box-container">
+                  <div class="box">
+                        <asp:DataList ID="DataList4" runat="server" CellPadding="1" DataSourceID="SqlDataSource4" RepeatColumns="4" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False" Width="1541px">
+                          <ItemTemplate>
+                              <table class="auto-style1">
+                                  <tr>
+                                      <td>
+                                          <asp:Label ID="Label1" runat="server" Font-Size="X-Large" Text='<%# Eval("pname") %>'></asp:Label>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="Label4" runat="server" Font-Size="X-Large" Text="₹"></asp:Label>
+                                          <asp:Label ID="Label3" runat="server" Font-Size="X-Large" Text='<%# Eval("price") %>'></asp:Label>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:ImageButton ID="ImageButton1" runat="server" Height="100px" ImageUrl='<%# Eval("pimage") %>' Width="100px" />
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                                  </tr>
+                                  <tr>
+                                      <td>
+                                          <asp:TextBox ID="txtQuantity" runat="server" CssClass="auto-style5" Font-Size="Large" Height="38px" placeholder="Quantity" Width="176px" Wrap="False"></asp:TextBox>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Button ID="btnAdd" runat="server" BackColor="#FF9900" CssClass="btn" ForeColor="White" Text="Add To Cart" />
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                  </tr>
+                              </table>
+                              <br />
+                              <br />
+                          </ItemTemplate>
+                      </asp:DataList>
+                      <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:dbElectronicConnectionString %>" SelectCommand="SELECT * FROM [tblProduct] WHERE ([category] = @category)">
+                          <SelectParameters>
+                              <asp:Parameter DefaultValue="refrigerator" Name="category" Type="String" />
+                          </SelectParameters>
+                      </asp:SqlDataSource>
+                  </div>
+        </div>
+        </div>
+        </div>
+        </div>
+   </section>
 </asp:Content>
 
