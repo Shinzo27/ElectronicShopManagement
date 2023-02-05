@@ -163,9 +163,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Asset\dbElectronic.bak" />
     <Content Include="admin\Css\bootstrap.min.css.map" />
     <Content Include="admin\Js\bootstrap.bundle.min.js.map" />
+    <Content Include="Asset\dbElectronic.bak" />
     <None Include="packages.config" />
     <Content Include="header.Master" />
     <None Include="Web.Debug.config">
