@@ -5,11 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Text;
 
 namespace ElectronicShopManagement
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
+        string strmsg;
         SqlConnection con = new SqlConnection("Data Source=SHINZO\\SQLEXPRESS;Initial Catalog=dbElectronic;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,6 +20,7 @@ namespace ElectronicShopManagement
 
         protected void btnRegister_Click(object sender, EventArgs e)
         {
+            strmsg = encrypt(txtPassword.Text.ToString());
             con.Open();
             string select = "select * from tblUser where username='" + txtUsername.Text + "'";
             SqlCommand result = new SqlCommand(select, con);
@@ -47,7 +50,7 @@ namespace ElectronicShopManagement
                     else
                     {
                         reader.Close();
-                        string query = "insert into tblUser(username,email,password,role,date) values ('" + txtUsername.Text + "','" + txtEmail.Text + "','" + txtPassword.Text + "','customer',GETDATE())";
+                        string query = "insert into tblUser(username,email,password,role,date) values ('" + txtUsername.Text + "','" + txtEmail.Text + "','" + strmsg + "','customer',GETDATE())";
                         SqlCommand com = new SqlCommand(query, con);
                         com.ExecuteNonQuery();
                         ScriptManager.RegisterStartupScript(this, this.GetType(), "k", "swal('Success!', 'Registered Successfully!', 'success').then(function() {window.location.href = 'login.aspx'}); ", true);
@@ -56,5 +59,13 @@ namespace ElectronicShopManagement
                 }
             }
         }
+
+        public string encrypt(string strEncrypted)
+        {
+            byte[] b = System.Text.ASCIIEncoding.ASCII.GetBytes(strEncrypted);
+            string encrypted = Convert.ToBase64String(b);
+            return encrypted;
+        }
+ 
     }
 }
