@@ -1,15 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/header.Master" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="ElectronicShopManagement.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            height: 15px;
-        }
-    </style>
-
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -64,23 +55,19 @@
                <h3 class="title">Fans</h3>
                <br>
                <div class="box-container">
-                  
-                        
                       <asp:DataList ID="DataList1" runat="server" CellPadding="1" DataSourceID="SqlDataSource1" RepeatColumns="4" RepeatDirection="Horizontal" ShowFooter="False" ShowHeader="False" Width="1541px">
                           <ItemTemplate>
                               <div class="box">
                         <div class="info">
                            <h3><%# Eval("pname") %></h3>
-                           <br>
-                              <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" >
-                              </select><br><br>
-                              &nbsp;<asp:Button ID="btnCart" runat="server" CssClass="btn" Height="36px" Text="Add to cart" Width="150px" OnClick="btnCart_Click" />
-                            <br>
-                            <br></br>
-                            </br>
+                            <br />
+                            <br />
+                            <asp:HiddenField ID="lblId" runat="server" Value='<%# Eval("pid") %>' />
+                            <asp:TextBox ID="txtQuantity" runat="server" CssClass="email" Font-Size="Large" placeholder="Quantity"></asp:TextBox>
+                            <asp:Button ID="btnCart" runat="server" CssClass="btn" Height="36px" OnClick="btnCart_Click" Text="Add to cart" Width="150px" />
+                            <br />
                         </div>
-                        <div class="img"><img src="<%# Eval("pimage") %>" style="float: right; width: 100px; height: 80px;" >
-                        </div>
+                        <div class="img"><img src='<%# Eval("pimage") %>' style="float: right; width: 100px; height: 80px;"></img> </div>
                         <div class="price">₹<%# Eval("price") %></div>
                     </div>
                           </ItemTemplate>
@@ -111,9 +98,10 @@
                                     <div class="info">
                                        <h3><%# Eval("pname") %></h3>
                                        <br>
+                                        <br />
                                           <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" >
-                                          </select><br><br>
-                                          &nbsp;<asp:Button ID="btnCart" runat="server" CssClass="btn" Height="36px" Text="Add to cart" Width="150px" />
+                                          <asp:HiddenField ID="lblId" runat="server" Value='<%# Eval("pid") %>' />
+                                          <asp:Button ID="btnCart" runat="server" CssClass="btn" Height="36px" Text="Add to cart" Width="150px" />
                                         <br></br>
                                     </div>
                                     <div class="img"><img src="<%# Eval("pimage") %>" style="float: right; width: 100px; height: 80px;" >
@@ -149,9 +137,10 @@
                         <div class="info">
                            <h3><%# Eval("pname") %></h3>
                            <br>
+                            <br />
                               <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" >
-                              </select><br><br>
-                              &nbsp;<asp:Button ID="btnCart" runat="server" CssClass="btn" Height="36px" Text="Add to cart" Width="150px" />
+                              <asp:HiddenField ID="lblId" runat="server" Value='<%# Eval("pid") %>' />    
+                            <asp:Button ID="btnCart" runat="server" CssClass="btn" Height="36px" Text="Add to cart" Width="150px" />
                             <br></br>
                         </div>
                         <div class="img"><img src="<%# Eval("pimage") %>" style="float: right; width: 100px; height: 80px;" >
@@ -187,9 +176,10 @@
                         <div class="info">
                            <h3><%# Eval("pname") %></h3>
                            <br>
+                            <br />
                               <input type="text" size="8" placeholder="quantity" name="quantity" style="height: 45px; font-size: 18px;" >
-                              </select><br><br>
-                              &nbsp;<asp:Button ID="btnCart" runat="server" CssClass="btn" Height="36px" Text="Add to cart" Width="150px" />
+                              <asp:HiddenField ID="lblId" runat="server" Value='<%# Eval("pid") %>' />  
+                            <asp:Button ID="btnCart" runat="server" CssClass="btn" Height="36px" Text="Add to cart" Width="150px" />
                             <br></br>
                         </div>
                         <div class="img"><img src="<%# Eval("pimage") %>" style="float: right; width: 100px; height: 80px;" >

@@ -27,16 +27,11 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+        
       <div class="collapse navbar-collapse" id="topNavBar">
         <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle ms-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="bi bi-person-fill"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Manage Account</a></li>
-              <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
-            </ul>
+          <li class="nav-item dropdown" >
+            <asp:Button ID="Button1" runat="server" BackColor="#0D6EFD" CssClass="btn" Font-Bold="True" Font-Size="Large" ForeColor="White" Text="Log Out" />
           </li>
         </ul>
       </div>

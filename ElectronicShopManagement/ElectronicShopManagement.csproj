@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="addtocart.aspx" />
     <Content Include="admin\addproduct.aspx" />
     <Content Include="admin\Css\addproduct.css" />
     <Content Include="admin\Css\bootstrap.min.css" />
@@ -90,6 +91,7 @@
     <Content Include="admin\Js\script.js" />
     <Content Include="admin\index.aspx" />
     <Content Include="admin\product.aspx" />
+    <Content Include="css\cart.css" />
     <Content Include="css\loginstyle.css" />
     <Content Include="css\style.css" />
     <Content Include="images\bajajfan.jpeg" />
@@ -112,6 +114,13 @@
     <Content Include="cart.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addtocart.aspx.cs">
+      <DependentUpon>addtocart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addtocart.aspx.designer.cs">
+      <DependentUpon>addtocart.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\addproduct.aspx.cs">
       <DependentUpon>addproduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

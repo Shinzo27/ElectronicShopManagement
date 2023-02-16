@@ -17,7 +17,10 @@ namespace ElectronicShopManagement
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["loggedin"] != null) 
+            {
+                Response.Redirect("index.aspx");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -30,9 +33,22 @@ namespace ElectronicShopManagement
 
             if(dr.Read() == true)
             {
-                Session["loggedin"] = "loggedin";
-                Session["username"] = dr.GetValue(1).ToString();
-                Response.Redirect("index.aspx");
+                string role = dr.GetValue(4).ToString();
+                int uid = (int)dr.GetValue(0);
+                if(role == "customer")
+                {
+                    Session["uid"] = uid;
+                    Session["loggedin"] = true;
+                    Session["username"] = dr.GetValue(1).ToString();
+                    Response.Redirect("index.aspx");
+                }
+                else
+                {
+                    Session["adminloggedin"] = true;
+                    Session["username"] = dr.GetValue(1).ToString();
+                    Response.Redirect("admin/index.aspx");
+                }
+                
             }
             else
             {
