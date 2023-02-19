@@ -21,6 +21,15 @@ namespace ElectronicShopManagement
             {
                 Response.Redirect("index.aspx");
             }
+
+            if (!IsPostBack)
+            {
+                if(Request.Cookies["email"] != null && Request.Cookies["password"] != null)
+                {
+                    txtEmail.Text = Request.Cookies["email"].Value;
+                    txtPassword.Attributes["value"] = Request.Cookies["password"].Value;
+                }
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -37,6 +46,18 @@ namespace ElectronicShopManagement
                 int uid = (int)dr.GetValue(0);
                 if(role == "customer")
                 {
+                    if (cbRemember.Checked)
+                    {
+                        Response.Cookies["email"].Value = txtEmail.Text;
+                        Response.Cookies["password"].Value = txtPassword.Text;
+                        Response.Cookies["email"].Expires = DateTime.Now.AddMinutes(1);
+                        Response.Cookies["password"].Expires = DateTime.Now.AddMinutes(1);
+                    }
+                    else
+                    {
+                        Response.Cookies["email"].Expires = DateTime.Now.AddMinutes(-1);
+                        Response.Cookies["password"].Expires = DateTime.Now.AddMinutes(-1);
+                    }
                     Session["uid"] = uid;
                     Session["loggedin"] = true;
                     Session["username"] = dr.GetValue(1).ToString();
@@ -63,5 +84,6 @@ namespace ElectronicShopManagement
             string encrypted = Convert.ToBase64String(b);
             return encrypted;
         }
+
     }
 }

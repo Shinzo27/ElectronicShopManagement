@@ -21,7 +21,7 @@
   border: none;
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.43, 1.1, 0.62, 1.08);
-  text-transform: capitalize;
+  text-transform: none;
 }
 
 * > img {
