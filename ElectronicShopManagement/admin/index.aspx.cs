@@ -16,5 +16,12 @@ namespace ElectronicShopManagement.admin
                 Response.Redirect("../index.aspx");
             }
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Session["adminloggedin"] = null;
+            Session["username"] = null;
+            Response.Redirect("../index.aspx");
+        }
     }
 }

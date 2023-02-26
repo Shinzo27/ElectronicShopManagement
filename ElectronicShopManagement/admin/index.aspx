@@ -31,7 +31,7 @@
       <div class="collapse navbar-collapse" id="topNavBar">
         <ul class="navbar-nav">
           <li class="nav-item dropdown" >
-            <asp:Button ID="Button1" runat="server" BackColor="#0D6EFD" CssClass="btn" Font-Bold="True" Font-Size="Large" ForeColor="White" Text="Log Out" />
+            <asp:Button ID="Button1" runat="server" BackColor="#0D6EFD" CssClass="btn" Font-Bold="True" Font-Size="Large" ForeColor="White" Text="Log Out" OnClick="Button1_Click" />
           </li>
         </ul>
       </div>
@@ -62,10 +62,6 @@
             <a href="sales.aspx" class="nav-link px-3 active">
               <span class="me-2"><i class="bi bi-chevron-right"></i></span>
               <span>Sales</span>
-            </a>
-            <a href="logout.aspx" class="nav-link px-3 active">
-              <span class="me-2"><i class="bi-person-fill"></i></span>
-              <span>Logout</span>
             </a>
           </li>
           <li class="my-4">
@@ -168,7 +164,7 @@
                     </h4>
                     <br />
                 </div>
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="1719px">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Width="1586px">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:BoundField DataField="pid" HeaderText="pid" InsertVisible="False" ReadOnly="True" SortExpression="pid" />
@@ -177,7 +173,12 @@
                         <asp:BoundField DataField="category" HeaderText="category" SortExpression="category" />
                         <asp:BoundField DataField="pimage" HeaderText="pimage" SortExpression="pimage" />
                         <asp:BoundField DataField="stock" HeaderText="stock" SortExpression="stock" />
-                        <asp:BoundField DataField="date" HeaderText="date" SortExpression="date" />
+                        <asp:HyperLinkField DataNavigateUrlFields="pid" DataNavigateUrlFormatString="updateproduct.aspx?pid={0}" HeaderText="Edit" Text="Edit">
+                        <controlstyle font-bold="True" font-size="Medium" forecolor="#347BD3" />
+                        </asp:HyperLinkField>
+                        <asp:HyperLinkField DataNavigateUrlFields="pid" DataNavigateUrlFormatString="deleteproduct.aspx?pid={0}" HeaderText="Delete" Text="Delete">
+                        <ControlStyle Font-Bold="True" Font-Size="Medium" ForeColor="#347BD3" />
+                        </asp:HyperLinkField>
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

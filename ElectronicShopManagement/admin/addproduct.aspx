@@ -7,7 +7,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Patel's Dryfruit and Masala</title>
+    <title>Hello Electronics</title>
 
     <!-- font awesome cdn link  -->
 
@@ -58,9 +58,9 @@
                         
                         <asp:DropDownList ID="ddCategory" runat="server" style="width: 90px; height: 30px; text-align: center; background-color: #4169e1; color: white; font-size: 14px; border-radius: 5px 5px 5px 5px;">
                             <asp:ListItem Value="fans">Fans</asp:ListItem>
-                            <asp:ListItem>Ac</asp:ListItem>
-                            <asp:ListItem>Light</asp:ListItem>
-                            <asp:ListItem>Oven</asp:ListItem>
+                            <asp:ListItem Value="ac">Ac</asp:ListItem>
+                            <asp:ListItem Value="light">Light</asp:ListItem>
+                            <asp:ListItem Value="refrigerator">refrigerator</asp:ListItem>
                         </asp:DropDownList>
                         
                     &nbsp;

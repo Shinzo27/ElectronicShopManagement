@@ -93,16 +93,14 @@
             <div class="swiper-slide slide">
                <h3 class="title">Air Conditioner</h3>
                <div class="box-container">
-                   <asp:DataList ID="DataList2" runat="server" DataSourceID="SqlDataSource2" RepeatDirection="Horizontal" RepeatColumns="4" Width="1504px" HorizontalAlign="Center">
+                   <asp:DataList ID="DataList2" runat="server" DataSourceID="SqlDataSource2" RepeatDirection="Horizontal" RepeatColumns="4" Width="1504px" HorizontalAlign="Center" OnItemCommand="DataList2_ItemCommand">
                        <ItemTemplate>
                         <div class="box">
                             <div class="info">
                                <h3><%# Eval("pname") %></h3>
+                                <asp:Label ID="pid" runat="server" Text='<%# Eval("pid") %>' Visible="False"></asp:Label>
                                <br>
-                                <asp:TextBox ID="txtQuantity" runat="server" Height="45px" Width="99px" placeholder="Enter Quantity"></asp:TextBox>
-                                <select name="weight" required="" style="width: 70px; height: 28px; font-size: 15px;">
-                                    <option value="250gm">250gms</option>
-                                </select><asp:Label ID="pid" runat="server" Text='<%# Eval("pid") %>' Visible="False"></asp:Label>
+                                <asp:TextBox ID="txtQuantity2" runat="server" Height="45px" Width="99px" placeholder="Enter Quantity" Font-Size="Medium"></asp:TextBox>
                                 <br>
                                 <br>
                                 <asp:Button ID="btnAddtocart" runat="server" CssClass="btn" Text="Add to cart" Width="143px" Height="35px" />
@@ -132,13 +130,14 @@
             <div class="swiper-slide slide">
                <h3 class="title">Light</h3>
                <div class="box-container">
-                   <asp:DataList ID="DataList3" runat="server" DataSourceID="SqlDataSource3" RepeatDirection="Horizontal" RepeatColumns="4" Width="1504px" HorizontalAlign="Center">
+                   <asp:DataList ID="DataList3" runat="server" DataSourceID="SqlDataSource3" RepeatDirection="Horizontal" RepeatColumns="4" Width="1504px" HorizontalAlign="Center" OnItemCommand="DataList3_ItemCommand">
                        <ItemTemplate>
                            <div class="box" style="padding-block:auto">
                         <div class="info">
                            <h3><%# Eval("pname") %></h3>
+                            <asp:Label ID="pid" runat="server" Text='<%# Eval("pid") %>' Visible="False"></asp:Label>
                            <br>
-                            <asp:TextBox ID="txtQuantity" runat="server" Height="45px" Width="99px" placeholder="Enter Quantity" Font-Size="Medium"></asp:TextBox>
+                            <asp:TextBox ID="txtQuantity3" runat="server" Height="45px" Width="99px" placeholder="Enter Quantity" Font-Size="Medium"></asp:TextBox>
                             <br />
                             <div class="price">
                                 ₹ <%# Eval("price") %>
@@ -171,13 +170,14 @@
             <div class="swiper-slide slide">
                <h3 class="title">Refrigerator</h3>
                <div class="box-container">
-                   <asp:DataList ID="DataList4" runat="server" DataSourceID="SqlDataSource4" RepeatDirection="Horizontal" RepeatColumns="4" Width="1504px" HorizontalAlign="Center">
+                   <asp:DataList ID="DataList4" runat="server" DataSourceID="SqlDataSource4" RepeatDirection="Horizontal" RepeatColumns="4" Width="1504px" HorizontalAlign="Center" OnItemCommand="DataList4_ItemCommand">
                        <ItemTemplate>
                            <div class="box" style="padding-block:auto">
                         <div class="info">
                            <h3><%# Eval("pname") %></h3>
+                            <asp:Label ID="pid" runat="server" Text='<%# Eval("pid") %>' Visible="False"></asp:Label>
                            <br>
-                            <asp:TextBox ID="txtQuantity" runat="server" Height="45px" Width="99px" placeholder="Enter Quantity" Font-Size="Medium"></asp:TextBox>
+                            <asp:TextBox ID="txtQuantity4" runat="server" Height="45px" Width="99px" placeholder="Enter Quantity" Font-Size="Medium"></asp:TextBox>
                             <br />
                             <div class="price">
                                 ₹ <%# Eval("price") %>

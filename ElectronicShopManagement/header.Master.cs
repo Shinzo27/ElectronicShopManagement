@@ -67,7 +67,7 @@ namespace ElectronicShopManagement
             btnUname.Visible = false;
             btnLogin.Visible = true;
             btnRegister.Visible = true;
-
+            Response.Redirect("index.aspx");
         }
     }
 }

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/dataTables.bootstrap5.min.css"/>
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="shortcut icon" type="x-icon" href="images\logo.png"/>
-  <title>Patel's Dryfruit And Masala</title>
+  <title>Hello Electronics</title>
 
 </head>
 
@@ -31,13 +31,7 @@
       <div class="collapse navbar-collapse" id="topNavBar">
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle ms-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="bi bi-person-fill"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><a class="dropdown-item" href="#">Manage Account</a></li>
-              <li><a class="dropdown-item" href="logout.php">Log Out</a></li>
-            </ul>
+            <asp:Button ID="Button1" runat="server" BackColor="#0D6EFD" CssClass="btn" Font-Bold="True" Font-Size="Large" ForeColor="White" Text="Log Out" OnClick="Button1_Click" />
           </li>
         </ul>
       </div>
@@ -68,10 +62,6 @@
             <a href="sales.aspx" class="nav-link px-3 active">
               <span class="me-2"><i class="bi bi-chevron-right"></i></span>
               <span>Sales</span>
-            </a>
-            <a href="logout.aspx" class="nav-link px-3 active">
-              <span class="me-2"><i class="bi-person-fill"></i></span>
-              <span>Logout</span>
             </a>
           </li>
           <li class="my-4">
