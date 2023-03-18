@@ -11,7 +11,7 @@ namespace ElectronicShopManagement
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection("Data Source=SHINZO\\SQLEXPRESS;Initial Catalog=dbElectronic;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=LAPTOP-MRFBN8Q1;Initial Catalog=dbElectronic;Integrated Security=True");
         SqlCommand com = new SqlCommand();
         string strmsg;
 
@@ -20,6 +20,10 @@ namespace ElectronicShopManagement
             if (Session["loggedin"] != null) 
             {
                 Response.Redirect("index.aspx");
+            }
+            else if(Session["adminloggedin"] != null)
+            {
+                Response.Redirect("admin/index.aspx");
             }
 
             if (!IsPostBack)

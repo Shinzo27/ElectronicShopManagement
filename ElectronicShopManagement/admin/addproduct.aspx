@@ -55,7 +55,7 @@
                         
                         <br />
                         <asp:TextBox ID="txtPname" runat="server" CssClass="content-wthree" placeholder="Enter Product Name"></asp:TextBox>
-                        
+                        <br />
                         <asp:DropDownList ID="ddCategory" runat="server" style="width: 90px; height: 30px; text-align: center; background-color: #4169e1; color: white; font-size: 14px; border-radius: 5px 5px 5px 5px;">
                             <asp:ListItem Value="fans">Fans</asp:ListItem>
                             <asp:ListItem Value="ac">Ac</asp:ListItem>

@@ -12,10 +12,13 @@ namespace ElectronicShopManagement.admin
     public partial class addproduct : System.Web.UI.Page
     {
         string path;
-        SqlConnection con = new SqlConnection("Data Source=SHINZO\\SQLEXPRESS;Initial Catalog=dbElectronic;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=LAPTOP-MRFBN8Q1;Initial Catalog=dbElectronic;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["adminloggedin"] == null)
+            {
+                Response.Redirect("../index.aspx");
+            }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

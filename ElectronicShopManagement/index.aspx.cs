@@ -10,7 +10,7 @@ namespace ElectronicShopManagement
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection("Data Source=SHINZO\\SQLEXPRESS;Initial Catalog=dbElectronic;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=LAPTOP-MRFBN8Q1;Initial Catalog=dbElectronic;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -68,7 +68,7 @@ namespace ElectronicShopManagement
                             if (reader.Read() != true)
                             {
                                 reader.Close();
-                                string insert = "insert into tblCart(uid,pname,price,quantity,total,date) values (" + uid + ",'" + pname + "','" + price + "','" + quantity + "','" + total + "',GETDATE())";
+                                string insert = "insert into tblCart(uid,pname,price,quantity,  total,date) values (" + uid + ",'" + pname + "','" + price + "','" + quantity + "','" + total + "',GETDATE())";
                                 SqlCommand ins = new SqlCommand(insert, con);
                                 int i = ins.ExecuteNonQuery();
                                 if (i > 0)

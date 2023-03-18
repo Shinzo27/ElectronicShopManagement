@@ -11,7 +11,7 @@ namespace ElectronicShopManagement
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection("Data Source=SHINZO\\SQLEXPRESS;Initial Catalog=dbElectronic;Integrated Security=True;MultipleActiveResultSets=true");
+        SqlConnection con = new SqlConnection("Data Source=LAPTOP-MRFBN8Q1;Initial Catalog=dbElectronic;Integrated Security=True");
         
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -24,7 +24,7 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="offcanvasExample">
         <span class="navbar-toggler-icon" data-bs-target="#sidebar"></span>
       </button>
-      <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="#">Patel's Dryfruit and Masala</a>
+      <a class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold" href="#">Hello Electronics</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#topNavBar" aria-controls="topNavBar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -79,7 +79,7 @@
                 </div>
             </div>
             <br/>
-            <asp:GridView ID="GridView1" runat="server" CaptionAlign="Left" AutoGenerateColumns="False" BorderColor="#3333FF" BorderStyle="Dotted" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="569px" Width="1293px" DataKeyNames="oid">
+            <asp:GridView ID="GridView1" runat="server" CaptionAlign="Left" AutoGenerateColumns="False" BorderColor="#3333FF" BorderStyle="Dotted" CellPadding="4" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="569px" Width="1217px" DataKeyNames="oid">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField DataField="oid" HeaderText="Order ID" ReadOnly="True" SortExpression="oid" />

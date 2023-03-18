@@ -91,6 +91,7 @@
     <Content Include="admin\product.aspx" />
     <Content Include="admin\sales.aspx" />
     <Content Include="admin\updateproduct.aspx" />
+    <Content Include="admin\deleteproduct.aspx" />
     <Content Include="css\cart.css" />
     <Content Include="css\loginstyle.css" />
     <Content Include="css\style.css" />
@@ -157,6 +158,13 @@
     </Compile>
     <Compile Include="admin\updateproduct.aspx.designer.cs">
       <DependentUpon>updateproduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\deleteproduct.aspx.cs">
+      <DependentUpon>deleteproduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\deleteproduct.aspx.designer.cs">
+      <DependentUpon>deleteproduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="deletecart.aspx.cs">
       <DependentUpon>deletecart.aspx</DependentUpon>
